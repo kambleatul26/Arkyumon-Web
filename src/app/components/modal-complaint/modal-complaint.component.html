@@ -1,0 +1,35 @@
+<mat-toolbar>Complaint {{ data.cmp.id }}</mat-toolbar>
+<mat-card style="text-align: center">
+  <mat-card-header>
+    <mat-card-title>
+      DESCRIPTION : {{ data.cmp.complaint }}
+    </mat-card-title>
+  </mat-card-header>
+  <div id='img'></div>
+  <!-- <img mat-card-image src='{{ c.cmp.image }}' alt='potholeImage'> -->
+  <mat-card-content>
+    <h2 style="text-align: center">Location on Map</h2>
+    <agm-map [latitude]="data.cmp.lat" [longitude]="data.cmp.lng">
+      <agm-marker [latitude]="data.cmp.lat" [longitude]="data.cmp.lng"></agm-marker>
+    </agm-map>
+  </mat-card-content>
+  <mat-card-actions>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Close</button>
+      <button mat-button (click)="delete()" cdkFocusInitial>Delete</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+<!-- <ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="name" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ol> -->

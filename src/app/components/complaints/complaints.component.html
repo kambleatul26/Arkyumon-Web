@@ -1,0 +1,76 @@
+<div class="wrapper ">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+  -->
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li>
+          <a (click)="this.router.navigate(['maps'])">
+            <i class="nc-icon nc-pin-3"></i>
+            <p>Maps</p>
+          </a>
+        </li>
+        <li class="active ">
+          <a (click)="this.router.navigate(['complaints'])">
+            <i class="nc-icon nc-tile-56"></i>
+            <p>Complaints</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+    <!-- <div class="panel-header panel-header-sm">
+
+
+</div> -->
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header ">
+              <h5 class="card-title">Complaints Blog</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th>
+                      Num
+                    </th>
+                    <th>
+                      Complaint
+                    </th>
+                    <th>
+                      Timestamp
+                    </th>
+                    <th>
+                       Details
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let c of complaints;index as i">
+                      <td>
+                        {{ i+1 }}
+                      </td>
+                      <td>
+                        {{ c.complaint }}
+                      </td>
+                      <td>
+                        {{ c.timeStamp }}
+                      </td>
+                      <td>
+                          <button mat-raised-button color="warn" (click)="open(c.id)">OPEN</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="wrapper ">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+  -->
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="active ">
+          <a (click)="this.router.navigate(['maps'])">
+            <i class="nc-icon nc-pin-3"></i>
+            <p>Maps</p>
+          </a>
+        </li>
+        <li>
+          <a (click)="this.router.navigate(['complaints'])">
+            <i class="nc-icon nc-tile-56"></i>
+            <p>Complaints</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+    <!-- <div class="panel-header panel-header-sm">
+
+
+</div> -->
+    <div class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header ">
+              <h5 class="card-title">Road Quality Maps</h5>
+            </div>
+            <div class="card-body">
+              <agm-map [latitude]="data[0].lat" [longitude]="data[0].lng">
+                <agm-marker *ngFor="let c of data" [latitude]="c.lat" [longitude]="c.lng"></agm-marker>
+              </agm-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
