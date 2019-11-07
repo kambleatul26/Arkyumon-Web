@@ -10,23 +10,14 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class DashboardComponent implements OnInit {
 
   title = 'My first AGM project';
-  data = [
-    {
-      lat: 19.1231776,
-      lng: 72.8339267
-    },
-    {
-      lat: 19.4231776,
-      lng: 72.4339267
-    },
-    {
-      lat: 19.6231776,
-      lng: 72.5339267
-    }
-  ];
+  data;
 
   constructor(protected router: Router, private firebaseService: FirebaseService) {
-    this.firebaseService.getData();
+    this.firebaseService.getPotholes()
+      .subscribe(res => {
+        this.data = res;
+        console.log(res);
+      });
   }
 
   ngOnInit() {

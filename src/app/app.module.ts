@@ -6,13 +6,16 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ComplaintsComponent } from './components/complaints/complaints.component';
 import { ModalComplaintComponent } from './components/modal-complaint/modal-complaint.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // MAPS
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 // FIREBASE
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 // ANGULAR MATERIAL
@@ -32,12 +35,15 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDo0s2sGaLsl94ZgW7VPxGfZh9q1m9LHQI',
     }),
+    AgmJsMarkerClustererModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,

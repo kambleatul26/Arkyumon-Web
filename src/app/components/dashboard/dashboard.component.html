@@ -33,8 +33,10 @@
               <h5 class="card-title">Road Quality Maps</h5>
             </div>
             <div class="card-body">
-              <agm-map [latitude]="data[0].lat" [longitude]="data[0].lng">
-                <agm-marker *ngFor="let c of data" [latitude]="c.lat" [longitude]="c.lng"></agm-marker>
+              <agm-map id='map' [latitude]="19" [longitude]="72">
+                <agm-marker-cluster [imagePath]="'https://github.com/googlearchive/js-marker-clusterer/tree/gh-pages/images/m'">
+                  <agm-marker *ngFor="let c of data" [latitude]="c.latitude" [longitude]="c.longitude"></agm-marker>
+                </agm-marker-cluster>
               </agm-map>
             </div>
           </div>

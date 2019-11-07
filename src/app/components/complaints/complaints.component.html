@@ -43,22 +43,16 @@
                       Complaint
                     </th>
                     <th>
-                      Timestamp
-                    </th>
-                    <th>
                        Details
                     </th>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let c of complaints;index as i">
+                    <tr *ngFor="let c of data;index as i">
                       <td>
                         {{ i+1 }}
                       </td>
                       <td>
-                        {{ c.complaint }}
-                      </td>
-                      <td>
-                        {{ c.timeStamp }}
+                        {{ c.description }}
                       </td>
                       <td>
                           <button mat-raised-button color="warn" (click)="open(c.id)">OPEN</button>
